@@ -2,7 +2,7 @@ import AnimeList from "./components/AnimeList";
 
 const Home = async () => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime`
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=8`
   );
   const anime = await response.json();
   return (
@@ -12,7 +12,7 @@ const Home = async () => {
         {anime.data.map(
           (data) => {
             return (
-              <div key={data.mal_id} className="shadow-xl"> 
+              <div key={data.mal_id} className="shadow-xl">
                 <AnimeList
                   title={data.title}
                   images={data.images.webp.image_url}

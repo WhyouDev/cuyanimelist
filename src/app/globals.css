@@ -20,3 +20,35 @@ img {
 img:hover {
   scale: 102%;
 }
+
+/* Loading Animation */
+.loading {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  border:8px solid #0000;
+  border-radius: 50%;
+  border-color:#E4E4ED #0000;
+  animation: s6 1s infinite linear;
+}
+.loading::before,
+.loading::after {
+  content:"";
+  grid-area: 1/1;
+  margin:4px;
+  border:inherit;
+  border-radius: 50%;
+}
+.loading::before {
+  border-color:#ffc639 #0000;
+  animation:inherit;
+  animation-duration: .5s;
+  animation-direction: reverse;
+}
+.loading::after {
+  margin:16px;
+}
+
+@keyframes s6 {
+  100%{transform: rotate(1turn)}
+}

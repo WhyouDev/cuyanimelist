@@ -13,7 +13,7 @@ const InputSearch = () => {
         if(!keyword || keyword.trim() == "") return
         if(event.key === "Enter" || event.type === "click") {
             event.preventDefault()
-            router.push(`/search/${keyword}?sfw=true`)
+            router.push(`/search/${keyword}`)
         }
     }
     return (

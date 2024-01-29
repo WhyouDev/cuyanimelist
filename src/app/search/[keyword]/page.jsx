@@ -2,13 +2,14 @@ import AnimeList from "@/components/AnimeList"
 import Header from "@/components/AnimeList/Header"
 
 const Page = async ({params}) => {
-  const {keyword} = params
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?sfw=true&q=${keyword}`)
+  const { keyword } = params
+  const decodedKeyword = decodeURI(keyword)
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?sfw=true&q=${decodedKeyword}`)
   const searchAnime = await response.json()
   return (
     <>
       <section>
-        <Header title={`Pencarian untuk ${keyword}...`} />
+        <Header title={`Pencarian untuk ${decodedKeyword}...`} />
         <AnimeList api={searchAnime}/>
       </section>
     </>

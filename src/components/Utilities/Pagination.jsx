@@ -1,19 +1,19 @@
 const Pagination = ({ page, lastPage, setPage }) => {
 
     const scrollTop = () => {
-        // scrollTo({
-        //     behavior: "smooth",
-        //     top: 0
-        // })
+        scrollTo({
+            behavior: "smooth",
+            top: 0
+        })
     }
 
     const handleNextPage = () => {
         setPage((prevState) => prevState + 1)
-        // scrollTop()
+        scrollTop()
     }
     const handlePrevPage = () => {
         setPage((prevState) => prevState - 1)
-        // scrollTop()
+        scrollTop()
     }
     return (
         <div className="flex justify-center items-center py-4 px-2 gap-4 text-color-primary text-2xl">

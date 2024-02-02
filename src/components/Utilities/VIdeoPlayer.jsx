@@ -25,16 +25,21 @@ const VideoPlayer = ({ youtubeId }) => {
                     videoId={youtubeId}
                     onReady={(event) => event.target.pauseVideo()}
                     opts={option}
+                    onError={() => alert("Maybe this video is damaged or has been deleted. Sorry :(")}
                 />
             </div>
         )
     }
-    return isOpen ? <Play /> : 
-    <button 
-    onClick={handleVideoPlayer}
-    className="fixed bottom-5 w-32 bg-color-primary text-color-dark">
-        Tonton Trailer
-    </button>
+    const ButtonOpenPlay = () => {
+        return (
+        <button
+            onClick={handleVideoPlayer}
+            className="rounded fixed bottom-5 right-5 w-32 bg-color-primary text-color-dark text-xl hover:bg-color-accent transition-all">
+                Tonton Trailer
+        </button>
+        )
+    }
+    return isOpen ? <Play /> : <ButtonOpenPlay/>
 }
 
-export default VideoPlayer;
+export default VideoPlayer

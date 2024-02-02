@@ -1,10 +1,9 @@
-import { getAnimeResponse } from "@/app/libs/api-libs"
+import { getAnimeResponse } from "@/libs/api-libs"
 import VideoPlayer from "@/components/Utilities/VIdeoPlayer"
 import Image from "next/image"
 
 const Page = async ({params: {id}}) => {
     const anime = await getAnimeResponse(`anime/${id}`)
-    console.log(anime)
 
     return (
         <>

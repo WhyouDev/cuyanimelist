@@ -9,6 +9,6 @@ export const getNestedAnimeResponse = async(resource, objectProperty) => {
     return response.data.flatMap(item => item.entry)
 }
 
-// export const randomAnime = (data, gap) => {
-//     const first = ~
-// }
+export const randomAnime = (data, gap) => {
+    const first = ~(randomAnime)
+}

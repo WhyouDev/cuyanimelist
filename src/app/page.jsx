@@ -16,7 +16,7 @@ const Page = async () => {
       </section>
       <section>
         <Header title="Rekomendasi" />
-        <AnimeList api={recommendedAnime }/>
+        <AnimeList api={recommendedAnime}/>
       </section>
     </>
   )

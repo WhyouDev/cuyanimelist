@@ -1,8 +1,12 @@
 import Navbar from '@/components/Navbar'
 import './globals.css'
 import { Gabarito } from 'next/font/google'
-
-const gabarito = Gabarito({ subsets: ['latin'] })
+ 
+const gabarito = Gabarito({ 
+  subsets: ['latin'], 
+  display: 'swap',
+  adjustFontFallback: false
+})
 
 export const metadata = {
   title: 'WhyAnimeList',
